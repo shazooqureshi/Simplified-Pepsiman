@@ -7,10 +7,15 @@ public class infinite_world : MonoBehaviour {
 //	void Start () {
 //	
 //	}
-	public float speed = -0.06f;
+	public static float speed = -0.1f;
 	// Update is called once per frame
 	void Update () {
-		float offset = Time.time * speed;
-		GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (0, offset);
+//		if(pepsican_rotation.score % 50 == 0 && pepsican_rotation.score != 0) {
+//			speed -= 0.06f;
+//		}
+		if(general_script.game_started) {
+			float offset = Time.time * speed;
+			GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (0, offset);
+		}
 	}
 }
